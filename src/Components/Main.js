@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import { Helmet } from "react-helmet";
 import Container from "@material-ui/core/Container";
 import Header from "./Header/Header";
+import Chart from "./Common/Case/Chart";
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Main extends React.Component {
     };
   }
   render() {
-    this.props.setDarkMode(false);
+    // this.props.setDarkMode(false);
     return (
       <div>
         <Helmet>
@@ -21,10 +22,7 @@ class Main extends React.Component {
         </Helmet>
         <Header />
         <Container style={{ color: "red" }}>
-          {this.state.isDark ? "flase" : "True"} {this.props.name}
-          <Button color="secondary" variant="contained">
-            Hello9
-          </Button>
+          <Chart />
         </Container>
       </div>
     );
