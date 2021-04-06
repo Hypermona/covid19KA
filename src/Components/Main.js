@@ -31,7 +31,7 @@ class Main extends React.Component {
       });
   }
   render() {
-    this.props.setDarkMode(false);
+    const { darkMode, setDarkMode } = this.props;
     return (
       <>
         <Helmet>
@@ -39,7 +39,7 @@ class Main extends React.Component {
           <meta name="description" content="Home page of covid19karnataka" />
         </Helmet>
         <div style={{ position: "sticky", top: 0, zIndex: 10 }}>
-          <Header />
+          <Header setDarkMode={setDarkMode} darkMode={darkMode} />
         </div>
         <Switch>
           <Route exact path="/">

@@ -8,6 +8,8 @@ import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import Img from "../../Images/searching.png";
 import { Link } from "react-router-dom";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
+import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
 
 const data = [
   {
@@ -27,7 +29,7 @@ const data = [
   },
 ];
 
-function MenuDrawer({ setDrawer }) {
+function MenuDrawer({ setDrawer, darkMode, setDarkMode }) {
   return (
     <List
       component="nav"
@@ -49,6 +51,13 @@ function MenuDrawer({ setDrawer }) {
           </ListItem>
         </Link>
       ))}
+
+      <ListItem button onClick={() => setDarkMode(!darkMode)}>
+        <ListItemIcon>
+          {darkMode ? <Brightness4Icon /> : <BrightnessHighIcon />}
+        </ListItemIcon>
+        <ListItemText primary="Toggle dark/light" />
+      </ListItem>
     </List>
   );
 }

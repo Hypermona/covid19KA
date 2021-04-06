@@ -9,6 +9,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import MenuDrawer from "./MenuDrawer";
 import Chip from "@material-ui/core/Chip";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
+import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,13 +25,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header() {
+export default function Header({ darkMode, setDarkMode }) {
   const classes = useStyles();
   const [drawer, setDrawer] = React.useState(false);
+  const matches = useMediaQuery("(min-width:600px)");
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "#303a52" }}>
+      <AppBar position="static" style={{ backgroundColor: "#424242" }}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -43,17 +47,42 @@ export default function Header() {
             COVID19
             <Chip
               color="secondary"
-              label={<Typography variant={"h5"}>KARNATAKA</Typography>}
+              label={
+                <Typography variant={"h6"} style={{ fontWeight: "600" }}>
+                  KARNATAKA
+                </Typography>
+              }
               variant="outlined"
             />
           </Typography>
-          <Button color="primary" variant="contained">
+          {matches ? (
+            darkMode ? (
+              <div
+                onClick={() => setDarkMode(false)}
+                style={{ padding: "20px" }}
+              >
+                <BrightnessHighIcon />
+              </div>
+            ) : (
+              <div
+                onClick={() => setDarkMode(true)}
+                style={{ padding: "20px" }}
+              >
+                <Brightness4Icon />
+              </div>
+            )
+          ) : null}
+          <Button color="secondary" variant="contained">
             Install
           </Button>
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawer} onClose={() => setDrawer(false)}>
-        <MenuDrawer setDrawer={setDrawer} />
+        <MenuDrawer
+          setDrawer={setDrawer}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
       </Drawer>
     </div>
   );

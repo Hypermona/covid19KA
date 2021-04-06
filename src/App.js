@@ -55,7 +55,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Main setDarkMode={setDarkMode} />
+        <Main setDarkMode={setDarkMode} darkMode={darkMode} />
       </Router>
     </ThemeProvider>
   );
