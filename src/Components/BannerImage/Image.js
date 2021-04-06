@@ -4,7 +4,7 @@ import img from "../../Images/stop.png";
 function Image() {
   return (
     <div style={{ textAlign: "center" }}>
-      <img src={img} alt="taking_rest" width="300px" />
+      <img src={img} alt="taking_rest" height="100%" width="300px" />
     </div>
   );
 }

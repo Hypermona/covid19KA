@@ -42,7 +42,7 @@ class Main extends React.Component {
         </Helmet>
         <Header />
         <Image />
-        {/* <CaseChart /> */}
+
         <div
           style={{
             display: "flex",
@@ -53,6 +53,7 @@ class Main extends React.Component {
         >
           <DataComp />
         </div>
+        <CaseChart />
       </>
     );
   }

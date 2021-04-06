@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import Drawer from "@material-ui/core/Drawer";
+import MenuDrawer from "./MenuDrawer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
-
+  const [drawer, setDrawer] = React.useState(false);
   return (
     <div className={classes.root}>
       <AppBar position="static" color="secondary">
@@ -31,6 +33,7 @@ export default function Header() {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
+            onClick={() => setDrawer(!drawer)}
           >
             <MenuIcon />
           </IconButton>
@@ -42,6 +45,9 @@ export default function Header() {
           </Button>
         </Toolbar>
       </AppBar>
+      <Drawer anchor="left" open={drawer} onClose={() => setDrawer(false)}>
+        <MenuDrawer />
+      </Drawer>
     </div>
   );
 }
