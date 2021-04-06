@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "303a52" }}>
+      <AppBar position="static" style={{ backgroundColor: "#303a52" }}>
         <Toolbar>
           <IconButton
             edge="start"
