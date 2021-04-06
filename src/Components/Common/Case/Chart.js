@@ -16,8 +16,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function Chart({ data = [], color = "red", maxValue }) {
-  console.log("maxvalue", maxValue);
+function Chart({ data = [], color = "red", maxValue }) {
+  // console.log("maxvalue", maxValue);
   const [startDate, setStartDate] = React.useState(30);
   const matches = !useMediaQuery("(min-width:600px)");
   let newData = [];
@@ -25,11 +25,12 @@ export default function Chart({ data = [], color = "red", maxValue }) {
   for (let i = data.length - startDate; i < data.length; i++) {
     newData.push(data[i]);
   }
-
-  console.log(startDate);
+  // console.log(data);
+  // console.log(newData);
   var dataKeyX = Object.keys(newData[0] || {})[0];
   var dataKeyY = Object.keys(newData[0] || {})[1];
-
+  // console.log(data);
+  // console.log("this is chart", maxValue);
   return (
     <Container maxWidth="md">
       {newData !== [] ? (
@@ -99,3 +100,5 @@ export default function Chart({ data = [], color = "red", maxValue }) {
     </Container>
   );
 }
+
+export default React.memo(Chart);
