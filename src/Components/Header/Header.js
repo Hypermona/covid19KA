@@ -8,6 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import MenuDrawer from "./MenuDrawer";
+import Chip from "@material-ui/core/Chip";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 0.5,
   },
 }));
 
@@ -39,7 +40,12 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h5" className={classes.title}>
-            Covid19Karnataka
+            COVID19
+            <Chip
+              color="secondary"
+              label={<Typography variant={"h5"}>KARNATAKA</Typography>}
+              variant="outlined"
+            />
           </Typography>
           <Button color="primary" variant="contained">
             Install
