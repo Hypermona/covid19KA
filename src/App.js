@@ -6,6 +6,7 @@ import Main from "./Components/Main";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const archia = {
   fontFamily: "Archia",
@@ -53,7 +54,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Main name="Mohan" setDarkMode={setDarkMode} />{" "}
+      <Router>
+        <Main setDarkMode={setDarkMode} />
+      </Router>
     </ThemeProvider>
   );
 }

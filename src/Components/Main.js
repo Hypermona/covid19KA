@@ -7,6 +7,7 @@ import CaseChart from "./Common/Case/CaseCart";
 import CaseTable from "./Common/Case/CaseTable";
 import DataComp from "./DataComp";
 import Image from "./BannerImage/Image";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 class Main extends React.Component {
   constructor(props) {
@@ -40,20 +41,29 @@ class Main extends React.Component {
           <title>Covid19Karnataka2 | Home</title>
           <meta name="description" content="Home page of covid19karnataka" />
         </Helmet>
-        <Header />
-        <Image />
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "100vw",
-          }}
-        >
-          <DataComp />
+        <div style={{ position: "sticky", top: 0, zIndex: 10 }}>
+          <Header />
         </div>
-        <CaseChart />
+        <Switch>
+          <Route exact path="/">
+            <Image />
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                width: "100vw",
+              }}
+            >
+              <DataComp />
+            </div>
+          </Route>
+          <Route exact path="/graph">
+            <CaseChart />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
       </>
     );
   }

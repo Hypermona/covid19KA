@@ -24,9 +24,10 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
   const classes = useStyles();
   const [drawer, setDrawer] = React.useState(false);
+
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="secondary">
+      <AppBar position="static" style={{ backgroundColor: "303a52" }}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -46,7 +47,7 @@ export default function Header() {
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawer} onClose={() => setDrawer(false)}>
-        <MenuDrawer />
+        <MenuDrawer setDrawer={setDrawer} />
       </Drawer>
     </div>
   );
