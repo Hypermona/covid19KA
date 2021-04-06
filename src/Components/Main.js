@@ -1,10 +1,7 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import { Helmet } from "react-helmet";
-import Container from "@material-ui/core/Container";
 import Header from "./Header/Header";
 import CaseChart from "./Common/Case/CaseCart";
-import CaseTable from "./Common/Case/CaseTable";
 import DataComp from "./DataComp";
 import Image from "./BannerImage/Image";
 import { Route, Switch, Redirect } from "react-router-dom";

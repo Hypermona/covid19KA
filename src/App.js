@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import Archia from "./fonts/archia-regular-webfont.ttf";
-import { PageView, initGA, Event } from "./Components/Tracking";
+import { PageView, initGA } from "./Components/Tracking";
 import Main from "./Components/Main";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
