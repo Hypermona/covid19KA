@@ -44,7 +44,10 @@ function MenuDrawer({ setDrawer, darkMode, setDarkMode }) {
         style={{ margin: "30px 60px" }}
       />
       {data.map((item) => (
-        <Link to={item.link}>
+        <Link
+          to={item.link}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <ListItem button key={item.title}>
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.title} />

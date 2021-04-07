@@ -12,6 +12,7 @@ import Chip from "@material-ui/core/Chip";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
   },
   title: {
-    flexGrow: 0.5,
+    flexGrow: 0.43,
   },
 }));
 
@@ -43,30 +44,40 @@ export default function Header({ darkMode, setDarkMode }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" className={classes.title}>
-            COVID19
-            <Chip
-              color="secondary"
-              label={
-                <Typography variant={"h6"} style={{ fontWeight: "600" }}>
-                  KARNATAKA
-                </Typography>
-              }
-              variant="outlined"
-            />
-          </Typography>
+          <Link
+            to="/"
+            style={{
+              textDecoration: "None",
+              color: "inherit",
+              cursor: "pointer",
+            }}
+            className={classes.title}
+          >
+            <Typography variant="h5">
+              COVID19
+              <Chip
+                color="secondary"
+                label={
+                  <Typography variant={"h6"} style={{ fontWeight: "600" }}>
+                    KARNATAKA
+                  </Typography>
+                }
+                variant="outlined"
+              />
+            </Typography>
+          </Link>
           {matches ? (
             darkMode ? (
               <div
                 onClick={() => setDarkMode(false)}
-                style={{ padding: "20px" }}
+                style={{ padding: "20px", cursor: "pointer" }}
               >
                 <BrightnessHighIcon />
               </div>
             ) : (
               <div
                 onClick={() => setDarkMode(true)}
-                style={{ padding: "20px" }}
+                style={{ padding: "20px", cursor: "pointer" }}
               >
                 <Brightness4Icon />
               </div>
