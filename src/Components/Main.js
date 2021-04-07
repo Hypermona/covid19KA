@@ -1,11 +1,12 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet";
 import Header from "./Header/Header";
-import CaseChart from "./Common/Case/CaseCart";
-import DataComp from "./DataComp";
-import About from "./About/About";
-import Image from "./BannerImage/Image";
 import { Route, Switch, Redirect } from "react-router-dom";
+
+const CaseChart = lazy(() => import("./Common/Case/CaseCart"));
+const DataComp = lazy(() => import("./DataComp"));
+const About = lazy(() => import("./About/About"));
+const Image = lazy(() => import("./BannerImage/Image"));
 
 class Main extends React.Component {
   constructor(props) {
@@ -42,30 +43,31 @@ class Main extends React.Component {
         <div style={{ position: "sticky", top: 0, zIndex: 10 }}>
           <Header setDarkMode={setDarkMode} darkMode={darkMode} />
         </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path="/">
+              <Image />
 
-        <Switch>
-          <Route exact path="/">
-            <Image />
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                width: "100vw",
-              }}
-            >
-              <DataComp />
-            </div>
-          </Route>
-          <Route exact path="/graph">
-            <CaseChart />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Redirect to="/" />
-        </Switch>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  width: "100vw",
+                }}
+              >
+                <DataComp />
+              </div>
+            </Route>
+            <Route exact path="/graph">
+              <CaseChart />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Redirect to="/" />
+          </Switch>
+        </Suspense>
       </>
     );
   }
