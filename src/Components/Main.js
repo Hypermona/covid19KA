@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Header/Header";
 import CaseChart from "./Common/Case/CaseCart";
 import DataComp from "./DataComp";
+import About from "./About/About";
 import Image from "./BannerImage/Image";
 import { Route, Switch, Redirect } from "react-router-dom";
 
@@ -41,6 +42,7 @@ class Main extends React.Component {
         <div style={{ position: "sticky", top: 0, zIndex: 10 }}>
           <Header setDarkMode={setDarkMode} darkMode={darkMode} />
         </div>
+
         <Switch>
           <Route exact path="/">
             <Image />
@@ -58,6 +60,9 @@ class Main extends React.Component {
           </Route>
           <Route exact path="/graph">
             <CaseChart />
+          </Route>
+          <Route exact path="/about">
+            <About />
           </Route>
           <Redirect to="/" />
         </Switch>

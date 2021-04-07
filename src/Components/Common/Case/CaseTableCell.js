@@ -29,7 +29,7 @@ function CaseTableCell({ data }) {
         className={classes.paper}
         elevation={0}
         style={{
-          backgroundImage: `linear-gradient(to bottom, #ffffff00 70%, ${data.color} 400%)`,
+          backgroundImage: `linear-gradient(to bottom, #ffffff00 70%, ${data.color} 200%)`,
         }}
       >
         <Typography
