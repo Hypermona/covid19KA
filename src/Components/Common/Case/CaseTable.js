@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import graphData from "../../../Functions/graphData";
 import ObjectToArrOfObj from "../../../Functions/ObjectToArrOfObj";
 import { Typography } from "@material-ui/core";
+import CaseCart from "./CaseCart";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,8 +14,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CaseTable({ data }) {
+  const [graphView, setGraphView] = React.useState({
+    Confirmed: false,
+    Recovered: false,
+    Deaths: false,
+  });
+  const type = graphView.Confirmed
+    ? "Confirmed"
+    : graphView.Recovered
+    ? "Recovered"
+    : graphView.Deaths
+    ? "Deceased"
+    : null;
   const classes = useStyles();
-  console.log("data", data.data[0]);
   const confirmedData = {
     lable: "Confiremed",
     daily: data.data[0].deltaconfirmed,
@@ -25,6 +37,13 @@ function CaseTable({ data }) {
     colorLight: "#dc354520",
     graph: 1,
     graphD: data.graphId === "TT" ? true : false,
+    setGraphView: setGraphView,
+    setGraph: {
+      Confirmed: true,
+      Recovered: false,
+      Deaths: false,
+    },
+    graphId: data.graphId,
   };
   const activeData = {
     lable: "Active",
@@ -46,6 +65,13 @@ function CaseTable({ data }) {
     colorMid: "#28a74599",
     graph: 3,
     graphD: data.graphId === "TT" ? true : false,
+    setGraphView: setGraphView,
+    setGraph: {
+      Confirmed: false,
+      Recovered: true,
+      Deaths: false,
+    },
+    graphId: data.graphId,
   };
   const deathData = {
     lable: "Deaths",
@@ -57,6 +83,13 @@ function CaseTable({ data }) {
     colorMid: "#6c757d99",
     graph: 4,
     graphD: data.graphId === "TT" ? true : false,
+    graphId: data.graphId,
+    setGraphView: setGraphView,
+    setGraph: {
+      Confirmed: false,
+      Recovered: false,
+      Deaths: true,
+    },
   };
   return (
     <>
@@ -75,6 +108,12 @@ function CaseTable({ data }) {
         <CaseTableCell data={recoveredData} />
         <CaseTableCell data={deathData} />
       </Grid>
+      <CaseCart
+        type={type}
+        id={data.graphId}
+        graphView={graphView}
+        setGraphView={setGraphView}
+      />
     </>
   );
 }

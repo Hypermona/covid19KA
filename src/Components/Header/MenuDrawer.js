@@ -17,11 +17,7 @@ const data = [
     title: "Home",
     link: "/",
   },
-  {
-    icon: <BarChartIcon fontSize="large" />,
-    title: "Graph Data",
-    link: "/graph",
-  },
+
   {
     icon: <InfoIcon fontSize="large" />,
     title: "About",

@@ -34,6 +34,7 @@ class Main extends React.Component {
   }
   render() {
     const { darkMode, setDarkMode } = this.props;
+
     return (
       <>
         <Helmet>
@@ -59,9 +60,7 @@ class Main extends React.Component {
                 <DataComp />
               </div>
             </Route>
-            <Route exact path="/graph">
-              <CaseChart />
-            </Route>
+
             <Route exact path="/about">
               <About />
             </Route>

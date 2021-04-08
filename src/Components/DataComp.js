@@ -13,7 +13,6 @@ export default class DataComp extends Component {
   }
 
   componentDidMount() {
-    // "https://api.covid19india.org/data.json";
     axios
       .get("https://api.covid19india.org/data.json")
       .then((data) => {

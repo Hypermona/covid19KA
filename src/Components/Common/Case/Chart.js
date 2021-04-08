@@ -4,6 +4,8 @@ import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import CancelIcon from "@material-ui/icons/Cancel";
+import IconButton from "@material-ui/core/IconButton";
 import {
   BarChart,
   Bar,
@@ -16,8 +18,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-function Chart({ data = [], color = "red", maxValue }) {
-  // console.log("maxvalue", maxValue);
+function Chart({ data = [], color = "red", maxValue, setGraphView, graphId }) {
+  console.log("graphId", graphId);
   const [startDate, setStartDate] = React.useState(30);
   const matches = !useMediaQuery("(min-width:600px)");
   let newData = [];
@@ -31,6 +33,7 @@ function Chart({ data = [], color = "red", maxValue }) {
   var dataKeyY = Object.keys(newData[0] || {})[1];
   // console.log(data);
   // console.log("this is chart", maxValue);
+
   return (
     <Container maxWidth="md">
       {newData !== [] ? (
@@ -41,7 +44,21 @@ function Chart({ data = [], color = "red", maxValue }) {
             margin: "auto",
             marginBottom: "50px",
           }}
+          id="graph"
         >
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <IconButton
+              onClick={() => {
+                setGraphView({
+                  Confirmed: false,
+                  Recovered: false,
+                  Deaths: false,
+                });
+              }}
+            >
+              <CancelIcon />
+            </IconButton>
+          </div>
           <ResponsiveContainer>
             <BarChart data={newData}>
               <CartesianGrid strokeDasharray="3 3" />
