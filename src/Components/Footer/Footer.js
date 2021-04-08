@@ -45,6 +45,7 @@ export default function Footer() {
           color: "GrayText",
           background: "#6c757d10",
           margin: "auto",
+          fontFamily: "monospace",
         }}
       >
         “Better to wear a mask than a ventilator; better to stay at home than in
