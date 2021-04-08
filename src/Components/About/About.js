@@ -18,12 +18,6 @@ const cls = {
     backgroundImage: `linear-gradient(to bottom, #ffffff00 -50%, red 1000%)`,
     padding: "1vw",
   },
-  links: {
-    width: "calc(20rem + 10vw)",
-    textAlign: "center",
-    margin: "auto",
-    padding: "10px",
-  },
 };
 
 const data = [
@@ -53,24 +47,6 @@ function About() {
           <section style={cls.body}>{item.body}</section>
         </div>
       ))}
-      <div style={cls.links}>
-        <a
-          href="https://www.instagram.com/hyper______________________/"
-          target="_blank"
-          style={{ textDecoration: "none", color: "red", padding: "0 20px" }}
-          rel="noreferrer"
-        >
-          <InstagramIcon style={{ fontSize: "3rem" }} />
-        </a>
-        <a
-          href="https://github.com/Hypermona"
-          target="_blank"
-          style={{ textDecoration: "none", color: "black", padding: "0 20px" }}
-          rel="noreferrer"
-        >
-          <GitHubIcon style={{ fontSize: "3rem" }} />
-        </a>
-      </div>
     </>
   );
 }

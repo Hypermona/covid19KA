@@ -94,14 +94,27 @@ function CaseTableCell({ data }) {
               data.setGraphView(data.setGraph);
               handleScrollToStats();
             }}
-            style={{ color: data.color }}
+            style={{
+              color: data.color,
+              fontWeight: "bold",
+              fontSize: "0.8rem",
+            }}
             fullWidth
             id={data.graphId}
           >
             View Graph
           </Button>
         ) : (
-          <Button disabled>View Graph</Button>
+          <Button
+            style={{
+              color: data.colorLight,
+              fontWeight: "bold",
+              fontSize: "0.8rem",
+            }}
+            disabled
+          >
+            View Graph
+          </Button>
         )}
       </Paper>
     </Grid>

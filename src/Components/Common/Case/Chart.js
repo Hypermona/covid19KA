@@ -64,7 +64,7 @@ function Chart({ data = [], color = "red", maxValue, setGraphView, graphId }) {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey={dataKeyX} />
               <YAxis
-                domain={[0, maxValue + maxValue * 0.2]}
+                domain={[0, maxValue + maxValue * 0.1]}
                 hide={matches ? true : false}
               />
               <Tooltip />

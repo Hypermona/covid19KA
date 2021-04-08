@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet";
 import Header from "./Header/Header";
 import { Route, Switch, Redirect } from "react-router-dom";
+import Footer from "./Footer/Footer";
 
 const CaseChart = lazy(() => import("./Common/Case/CaseCart"));
 const DataComp = lazy(() => import("./DataComp"));
@@ -66,6 +67,7 @@ class Main extends React.Component {
             </Route>
             <Redirect to="/" />
           </Switch>
+          <Footer />
         </Suspense>
       </>
     );
