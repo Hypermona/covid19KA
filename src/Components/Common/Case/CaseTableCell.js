@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import TinyLineChart from "./TinyLineChart";
 import Button from "@material-ui/core/Button/";
+import numToRupee from "../../../Functions/NumToRupee";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 
 function CaseTableCell({ data }) {
   const classes = useStyles();
-  // console.log("this is case table", data);
   const handleScrollToStats = () => {
     let button = document.getElementById(data.graphId);
 
@@ -61,7 +61,7 @@ function CaseTableCell({ data }) {
               fontWeight: "600",
             }}
           >
-            [ + {data.daily}]
+            [ + {numToRupee(data.daily)}]
           </Typography>
         ) : (
           <div style={{ height: "20px" }}></div>
@@ -73,7 +73,7 @@ function CaseTableCell({ data }) {
             fontSize: "calc(1rem + 0.8vw)",
           }}
         >
-          {data.total}
+          {numToRupee(data.total)}
         </Typography>
         <Grid
           style={{

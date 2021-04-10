@@ -27,9 +27,9 @@ function App() {
     initGA("UA-192838043-1");
     PageView();
   }, []);
-  let preferedMode = useMediaQuery("(prefers-color-scheme: dark)");
+  let preferedMode0 = useMediaQuery("(prefers-color-scheme: dark)");
   const [darkMode, setDarkMode] = React.useState(false);
-  preferedMode = darkMode;
+  let preferedMode = preferedMode0 ^ darkMode;
   console.log(preferedMode);
   console.log(darkMode);
   const theme = React.useMemo(

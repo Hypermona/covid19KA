@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import objectToArrOfObj from "../Functions/ObjectToArrOfObj";
-import { sortAscending, sortDescending } from "../Functions/Sort";
+
 import Cases from "./Cases/Cases";
 
 export default class DataComp extends Component {

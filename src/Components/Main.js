@@ -4,6 +4,8 @@ import Header from "./Header/Header";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Footer from "./Footer/Footer";
 
+import Table from "./Table/Table";
+
 const CaseChart = lazy(() => import("./Common/Case/CaseCart"));
 const DataComp = lazy(() => import("./DataComp"));
 const About = lazy(() => import("./About/About"));
@@ -60,6 +62,7 @@ class Main extends React.Component {
               >
                 <DataComp />
               </div>
+              <Table />
             </Route>
 
             <Route exact path="/about">
@@ -67,8 +70,9 @@ class Main extends React.Component {
             </Route>
             <Redirect to="/" />
           </Switch>
-          <Footer />
         </Suspense>
+
+        <Footer />
       </>
     );
   }
