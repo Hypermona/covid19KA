@@ -30,8 +30,7 @@ function App() {
   let preferedMode0 = useMediaQuery("(prefers-color-scheme: dark)");
   const [darkMode, setDarkMode] = React.useState(false);
   let preferedMode = preferedMode0 ^ darkMode;
-  console.log(preferedMode);
-  console.log(darkMode);
+
   const theme = React.useMemo(
     () =>
       createMuiTheme({

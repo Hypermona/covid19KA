@@ -17,16 +17,7 @@ class Main extends React.Component {
       data: [],
     };
   }
-  componentDidMount() {
-    fetch("https://api.covid19india.org/data.json")
-      .then((data) => data.json())
-      .then((data) => {
-        console.log(data.statewise);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+
   render() {
     const { darkMode, setDarkMode } = this.props;
 
