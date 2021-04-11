@@ -4,9 +4,7 @@ import Header from "./Header/Header";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Footer from "./Footer/Footer";
 
-import Table from "./Table/Table";
-
-const CaseChart = lazy(() => import("./Common/Case/CaseCart"));
+const Table = lazy(() => import("./Table/Table"));
 const DataComp = lazy(() => import("./DataComp"));
 const About = lazy(() => import("./About/About"));
 const Image = lazy(() => import("./BannerImage/Image"));
@@ -20,16 +18,10 @@ class Main extends React.Component {
     };
   }
   componentDidMount() {
-    //api.covid19india.org/state_district_wise.json
-    //api.covid19india.org/states_daily.json
     fetch("https://api.covid19india.org/data.json")
       .then((data) => data.json())
       .then((data) => {
-        console.log(
-          data.statewise
-          // .map((data) => data.ka)
-          // .filter((data) => data.status === "Confirmed")
-        );
+        console.log(data.statewise);
       })
       .catch((err) => {
         console.log(err);
