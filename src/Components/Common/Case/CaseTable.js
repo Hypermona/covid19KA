@@ -2,8 +2,6 @@ import React from "react";
 import CaseTableCell from "./CaseTableCell";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import graphData from "../../../Functions/graphData";
-import ObjectToArrOfObj from "../../../Functions/ObjectToArrOfObj";
 import { Typography } from "@material-ui/core";
 import CaseCart from "./CaseCart";
 

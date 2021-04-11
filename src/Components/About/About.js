@@ -1,6 +1,5 @@
 import React from "react";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import Helmet from "react-helmet";
 
 const cls = {
   card: {
@@ -41,6 +40,10 @@ const data = [
 function About() {
   return (
     <>
+      <Helmet>
+        <title>Covid19Karnataka2 | Home</title>
+        <meta name="description" content="Home page of covid19karnataka" />
+      </Helmet>
       {data.map((item) => (
         <div style={cls.card} key={item.title}>
           <header style={cls.title}>{item.title}</header>
