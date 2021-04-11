@@ -57,7 +57,7 @@ class Main extends React.Component {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  width: "100vw",
+                  width: "98vw",
                 }}
               >
                 <DataComp />

@@ -28,8 +28,41 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header({ darkMode, setDarkMode }) {
   const classes = useStyles();
+
   const [drawer, setDrawer] = React.useState(false);
   const matches = useMediaQuery("(min-width:600px)");
+
+  // strart of Installing pwa.................
+  const [install, setInstall] = React.useState(true);
+  const showInstallPromotion = () => {
+    setInstall(true);
+  };
+  const hideInstallPromotion = () => {
+    setInstall(false);
+  };
+  window.addEventListener("beforeinstallprompt", (event) => {
+    console.log("👍", "beforeinstallprompt", event);
+    window.deferredPrompt = event;
+    showInstallPromotion();
+  });
+
+  const handleInstall = async () => {
+    const promptEvent = window.deferredPrompt;
+    if (!promptEvent) {
+      return;
+    }
+    promptEvent.prompt();
+    const result = await promptEvent.userChoice;
+    console.log("👍", "userChoice", result);
+    window.deferredPrompt = null;
+    hideInstallPromotion();
+  };
+  window.addEventListener("appinstalled", (event) => {
+    console.log("👍", "appinstalled", event);
+    // Clear the deferredPrompt so it can be garbage collected
+    window.deferredPrompt = null;
+  });
+  // end of Installing pwa.................
 
   return (
     <div className={classes.root}>
@@ -83,9 +116,15 @@ export default function Header({ darkMode, setDarkMode }) {
               </div>
             )
           ) : null}
-          <Button color="secondary" variant="contained">
-            Install
-          </Button>
+          {install && (
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={() => handleInstall()}
+            >
+              Install
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawer} onClose={() => setDrawer(false)}>
