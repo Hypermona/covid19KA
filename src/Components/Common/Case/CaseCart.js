@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import Chart from "./Chart";
-import { graphData1, graphData2 } from "../../../Functions/graphData";
 import objectToArrOfObj from "../../../Functions/ObjectToArrOfObj";
+import { graphData1, graphData2 } from "../../../Functions/graphData";
+
 class CaseCart extends React.Component {
   state = {
     data1: null,

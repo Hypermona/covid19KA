@@ -1,7 +1,6 @@
-import React, { Component } from "react";
 import axios from "axios";
-
 import Cases from "./Cases/Cases";
+import React, { Component } from "react";
 
 export default class DataComp extends Component {
   constructor(props) {

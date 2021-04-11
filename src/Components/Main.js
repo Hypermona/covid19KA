@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
-import { Helmet } from "react-helmet";
 import Header from "./Header/Header";
-import { Route, Switch, Redirect } from "react-router-dom";
 import Footer from "./Footer/Footer";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Table = lazy(() => import("./Table/Table"));
 const DataComp = lazy(() => import("./DataComp"));

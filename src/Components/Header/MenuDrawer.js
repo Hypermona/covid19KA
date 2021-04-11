@@ -6,9 +6,9 @@ import List from "@material-ui/core/List";
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 import Img from "../../Images/searching.png";
-import { Link } from "react-router-dom";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
+import { Link } from "react-router-dom";
 
 const data = [
   {

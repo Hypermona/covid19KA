@@ -1,9 +1,9 @@
 import React from "react";
 import CaseTableCell from "./CaseTableCell";
 import Grid from "@material-ui/core/Grid";
+import CaseCart from "./CaseCart";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import CaseCart from "./CaseCart";
 
 const useStyles = makeStyles((theme) => ({
   root: {

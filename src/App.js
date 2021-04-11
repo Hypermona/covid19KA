@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import "./App.css";
 import Archia from "./fonts/archia-regular-webfont.ttf";
-import { PageView, initGA } from "./Components/Tracking";
 import Main from "./Components/Main";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { BrowserRouter as Router } from "react-router-dom";
+import { PageView, initGA } from "./Components/Tracking";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import "./App.css";
 
 const archia = {
   fontFamily: "Archia",
