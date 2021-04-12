@@ -33,7 +33,7 @@ export default function Header({ darkMode, setDarkMode }) {
   const matches = useMediaQuery("(min-width:600px)");
 
   // strart of Installing pwa.................
-  const [install, setInstall] = React.useState(true);
+  const [install, setInstall] = React.useState(false);
   const showInstallPromotion = () => {
     setInstall(true);
   };
@@ -54,8 +54,8 @@ export default function Header({ darkMode, setDarkMode }) {
     promptEvent.prompt();
     const result = await promptEvent.userChoice;
     console.log("👍", "userChoice", result);
-    window.deferredPrompt = null;
     hideInstallPromotion();
+    window.deferredPrompt = null;
   };
   window.addEventListener("appinstalled", (event) => {
     console.log("👍", "appinstalled", event);
