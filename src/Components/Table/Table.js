@@ -24,7 +24,6 @@ class Table extends React.Component {
           newArr.push({ dist: e[0], ...e[1] });
         });
         this.setState({ data: sortDescending(newArr, "confirmed") });
-        console.log("data set", data);
       })
       .catch((e) => {
         console.log(e);
@@ -32,7 +31,6 @@ class Table extends React.Component {
   }
 
   render() {
-    console.log(this.state.data);
     const dataSortA = (value, set) => {
       this.setState((ps) => ({
         data: sortAscending(ps.data, value),

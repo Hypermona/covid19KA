@@ -63,6 +63,7 @@ function TableBody({ data }) {
             style={{
               display: "flex",
             }}
+            key={e.dist}
           >
             <CellTitle data={e.dist} />
             <div

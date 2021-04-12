@@ -102,7 +102,6 @@ class CaseCart extends React.Component {
         })
       );
     }
-    console.log("maxDeaths", maxDeaths);
     switch (this.props.type) {
       case "Confirmed":
         return (

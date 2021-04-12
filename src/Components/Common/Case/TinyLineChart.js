@@ -90,7 +90,6 @@ const dataKA = [
   },
 ];
 export default function TinyLineChart({ graph, graphD, color }) {
-  console.log("graphcolor", graphD, typeof graphD);
   let dataKey = "";
   switch (graph) {
     case 1:
