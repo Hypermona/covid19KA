@@ -105,14 +105,14 @@ export default function Header({ darkMode, setDarkMode }) {
                 onClick={() => setDarkMode(false)}
                 style={{ padding: "20px", cursor: "pointer" }}
               >
-                <BrightnessHighIcon />
+                <Brightness4Icon />
               </div>
             ) : (
               <div
                 onClick={() => setDarkMode(true)}
                 style={{ padding: "20px", cursor: "pointer" }}
               >
-                <Brightness4Icon />
+                <BrightnessHighIcon />
               </div>
             )
           ) : null}
