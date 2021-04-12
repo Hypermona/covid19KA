@@ -24,7 +24,7 @@ class Main extends React.Component {
     return (
       <>
         <Helmet>
-          <title>Covid19Karnataka2 | Home</title>
+          <title>Covid19Karnataka | Home</title>
           <meta name="description" content="Home page of covid19karnataka" />
         </Helmet>
         <div style={{ position: "sticky", top: 0, zIndex: 10 }}>

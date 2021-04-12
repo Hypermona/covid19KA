@@ -41,7 +41,7 @@ function About() {
   return (
     <>
       <Helmet>
-        <title>Covid19Karnataka2 | Home</title>
+        <title>Covid19Karnataka | About</title>
         <meta name="description" content="Home page of covid19karnataka" />
       </Helmet>
       {data.map((item) => (
