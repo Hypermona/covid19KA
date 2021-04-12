@@ -37,7 +37,14 @@ export default function Footer() {
           Covid19Karnataka
         </Link>
         {" | "}
-        <Link style={{ textDecoration: "none", color: "#007bff" }}>Report</Link>
+        <a
+          href="https://github.com/Hypermona/covid19KA/issues"
+          target="_blank"
+          rel="noreferrer"
+          style={{ textDecoration: "none", color: "#007bff" }}
+        >
+          Report
+        </a>
       </Typography>
       <Typography
         style={{
