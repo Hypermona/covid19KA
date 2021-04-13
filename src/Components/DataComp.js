@@ -1,6 +1,10 @@
+import React, { Component } from "react";
+
 import axios from "axios";
 import Cases from "./Cases/Cases";
-import React, { Component } from "react";
+import Image from "./BannerImage/Image";
+import Loading from "./Loading/Loading";
+import Table from "./Table/Table";
 
 export default class DataComp extends Component {
   constructor(props) {
@@ -25,9 +29,25 @@ export default class DataComp extends Component {
     return (
       <div>
         {this.state.data ? (
-          <Cases data={this.state.data.data.statewise} />
+          <>
+            <Image />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                width: "98vw",
+              }}
+            >
+              <Cases data={this.state.data.data.statewise} />
+            </div>
+            <Table />
+          </>
         ) : (
-          <div>Loading...</div>
+          <>
+            <Loading />
+            <h5 align="center">Almost Finished...</h5>
+          </>
         )}
       </div>
     );
