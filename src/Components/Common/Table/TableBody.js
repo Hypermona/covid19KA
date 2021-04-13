@@ -69,7 +69,7 @@ function TableBody({ data }) {
             <div
               style={{
                 display: "flex",
-                width: matches ? "45vw" : "70vw",
+                width: matches ? "45vw" : "69vw",
                 justifyContent: "center",
               }}
             >

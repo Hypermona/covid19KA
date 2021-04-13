@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .animated {
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
