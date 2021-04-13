@@ -38,6 +38,7 @@ export default class DataComp extends Component {
                 alignItems: "center",
                 width: "98vw",
               }}
+              className="animated bounceUp"
             >
               <Cases data={this.state.data.data.statewise} />
             </div>
