@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
   },
   title: {
-    flexGrow: 0.43,
+    flexGrow: 0.48,
   },
 }));
 
