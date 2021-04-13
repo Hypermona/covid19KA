@@ -19,7 +19,6 @@ import {
 } from "recharts";
 
 function Chart({ data = [], color = "red", maxValue, setGraphView, graphId }) {
-  console.log("graphId", graphId);
   const [startDate, setStartDate] = React.useState(30);
   const matches = !useMediaQuery("(min-width:600px)");
   let newData = [];
@@ -27,12 +26,9 @@ function Chart({ data = [], color = "red", maxValue, setGraphView, graphId }) {
   for (let i = data.length - startDate; i < data.length; i++) {
     newData.push(data[i]);
   }
-  // console.log(data);
-  // console.log(newData);
+
   var dataKeyX = Object.keys(newData[0] || {})[0];
   var dataKeyY = Object.keys(newData[0] || {})[1];
-  // console.log(data);
-  // console.log("this is chart", maxValue);
 
   return (
     <Container maxWidth="md">

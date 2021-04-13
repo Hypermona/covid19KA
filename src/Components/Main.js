@@ -53,9 +53,8 @@ class Main extends React.Component {
             </Route>
             <Redirect to="/" />
           </Switch>
+          <Footer />
         </Suspense>
-
-        <Footer />
       </>
     );
   }
