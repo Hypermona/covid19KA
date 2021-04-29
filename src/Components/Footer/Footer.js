@@ -60,7 +60,7 @@ export default function Footer() {
       </Typography>
       <div style={{ marginTop: "20px" }}>
         <a
-          href="https://www.instagram.com/hyper______________________/"
+          href="https://www.instagram.com/_itshyper__/"
           target="_blank"
           style={{ textDecoration: "none", color: "red", padding: "0 10px" }}
           rel="noreferrer"
