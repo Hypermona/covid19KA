@@ -37,8 +37,8 @@ function App() {
         palette: {
           type: preferedMode ? "dark" : "light",
           background: {
-        default: finalTheme ? "#1C1124" : "#C77DFF",
-        paper: finalTheme ? "#321F40" : "#CDA1FF",
+        default: preferedMode ? "#1C1124" : "#C77DFF",
+        paper: preferedMode ? "#321F40" : "#CDA1FF",
       },
           secondary: {
         light: "#FF3D4A",
