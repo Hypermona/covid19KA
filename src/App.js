@@ -41,7 +41,7 @@ function App() {
         paper: preferedMode ? "#321F40" : "#CDA1FF",
       },
           secondary: {
-        light: "#FF3D4A",
+        main: "#FF3D4A",
       },
         },
         
