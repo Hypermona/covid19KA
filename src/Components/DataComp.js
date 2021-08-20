@@ -16,7 +16,7 @@ export default class DataComp extends Component {
 
   componentDidMount() {
     axios
-      .get("https://api.covid19india.org/data.json")
+      .get("https://api.covid19india.org/data.json",{headers:{Accept: "*/*"}})
       .then((data) => {
         this.setState({ data });
       })
