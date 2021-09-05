@@ -2,12 +2,12 @@
 
 ![mobile](ss/mobile2.jpg)
 
-![desktop](ss/home.jpg)
+![desktop](ss/home.png)
 
-![desktop](ss/data.jpg)
+![desktop](ss/data.png)
 
-![desktop](ss/mapc.jpg)
+![desktop](ss/mapc.png)
 
-![desktop](ss/mapr.jpg)
+![desktop](ss/mapr.png)
 
-![desktop](ss/statewise.jpg)
+![desktop](ss/statewise.png)
