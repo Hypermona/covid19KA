@@ -12,7 +12,7 @@ class CaseCart extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://api.covid19india.org/data.json")
+      .get("https://data.covid19india.org/data.json")
 
       .then((data) => {
         this.setState({ data1: data });
@@ -21,7 +21,7 @@ class CaseCart extends React.Component {
         console.log(error); // handle error
       });
     axios
-      .get("https://api.covid19india.org/states_daily.json")
+      .get("https://data.covid19india.org/states_daily.json")
 
       .then((data) => {
         this.setState({ data2: data });
@@ -39,9 +39,7 @@ class CaseCart extends React.Component {
     let maxRecovered = {};
     let maxDeaths = {};
     if (this.props.id === "TT" && this.state.data1) {
-      const arrayData = objectToArrOfObj(
-        this.state.data1.data.cases_time_series
-      );
+      const arrayData = objectToArrOfObj(this.state.data1.data.cases_time_series);
 
       DailyConfirmed = graphData1(arrayData, "date", "dailyconfirmed");
       DailyRecovered = graphData1(arrayData, "date", "dailyrecovered");
@@ -67,21 +65,9 @@ class CaseCart extends React.Component {
       );
     }
     if (this.props.id === "KA" && this.state.data2) {
-      DailyConfirmed = graphData2(
-        this.state.data2.data.states_daily,
-        "date",
-        "Confirmed"
-      );
-      DailyRecovered = graphData2(
-        this.state.data2.data.states_daily,
-        "date",
-        "Recovered"
-      );
-      DailyDeaths = graphData2(
-        this.state.data2.data.states_daily,
-        "date",
-        "Deceased"
-      );
+      DailyConfirmed = graphData2(this.state.data2.data.states_daily, "date", "Confirmed");
+      DailyRecovered = graphData2(this.state.data2.data.states_daily, "date", "Recovered");
+      DailyDeaths = graphData2(this.state.data2.data.states_daily, "date", "Deceased");
 
       maxConfirmed = Math.max(
         ...DailyConfirmed.map(function (o) {

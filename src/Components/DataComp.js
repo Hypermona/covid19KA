@@ -16,9 +16,10 @@ export default class DataComp extends Component {
 
   componentDidMount() {
     axios
-      .get("https://api.covid19india.org/data.json")
+      .get("https://data.covid19india.org/data.json")
       .then((data) => {
         this.setState({ data });
+        console.log("dta", data);
       })
       .catch(function (error) {
         console.log(error); // handle error

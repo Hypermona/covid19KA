@@ -17,7 +17,7 @@ class Table extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://api.covid19india.org/state_district_wise.json")
+      .get("https://data.covid19india.org/state_district_wise.json")
       .then((data) => {
         let newArr = [];
         Object.entries(data.data.Karnataka.districtData).map((e) => {
@@ -56,11 +56,7 @@ class Table extends React.Component {
         >
           Casess In Karnataka District Wise
         </p>
-        <TableHead
-          dataSortA={dataSortA}
-          dataSortD={dataSortD}
-          sort={this.state.sort}
-        />
+        <TableHead dataSortA={dataSortA} dataSortD={dataSortD} sort={this.state.sort} />
         {this.state.data && <TableBody data={this.state.data} />}
       </div>
     );
